@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Complete Delivery System</h2>
+        <div class="card p-4">
+            <div class="mb-3">
+                <label for="product-name" class="form-label">Product Name:</label>
+                <input type="text" class="form-control" id="product-name" placeholder="Enter product name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product Weight:</label>
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <input type="number" class="form-control" id="weight-value" placeholder="Enter weight">
+                    </div>
+                    <div>
+                        <label class="form-check-label me-2">
+                            <input type="radio" class="form-check-input" name="weight-unit" value="kg"> kg
+                        </label>
+                        <label class="form-check-label me-2">
+                            <input type="radio" class="form-check-input" name="weight-unit" value="g"> g
+                        </label>
+                        <label class="form-check-label me-2">
+                            <input type="radio" class="form-check-input" name="weight-unit" value="mg"> mg
+                        </label>
+                        <label class="form-check-label me-2">
+                            <input type="radio" class="form-check-input" name="weight-unit" value="lb"> lb
+                        </label>
+                        <label class="form-check-label me-2">
+                            <input type="radio" class="form-check-input" name="weight-unit" value="l"> L
+                        </label>
+                        <label class="form-check-label me-2">
+                            <input type="radio" class="form-check-input" name="weight-unit" value="ml"> mL
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">Select City:</label>
+                <select class="form-select" id="city" onchange="updateAreaOptions()">
+                    <option value="">Select City</option>
+                    <option value="dhaka">Dhaka</option>
+                    <option value="chandpur">Chandpur</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="area" class="form-label">Select Area:</label>
+                <select class="form-select" id="area" disabled>
+                    <option value="">Select Area</option>
+                </select>
+            </div>
+            <button class="btn btn-primary w-100" onclick="calculateDeliveryCharge()">Calculate Delivery Charge</button>
+        </div>
+        <div class="mt-4 text-center">
+            <h5 id="result" class="text-success"></h5>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
